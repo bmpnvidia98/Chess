@@ -1,1 +1,1 @@
-# Projects
+# Chess project
