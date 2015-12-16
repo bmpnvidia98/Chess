@@ -43,6 +43,7 @@ int main(){
 }
 
 int isvalid(char piece, char ix1, char iy1, char mov, char fx1, char fy1){
+	if((tolower(piece) == piece && turn == lower) || (tolower(piece)!= piece && turn == upper) ){
 	int result;
 	int fx = fx1 - 'a';
 	int ix = ix1 - 'a'; // Converting chars to int for easier use later
@@ -77,6 +78,7 @@ int isvalid(char piece, char ix1, char iy1, char mov, char fx1, char fy1){
 					return 0;
 			}
 		case '-':
+			switch(tolower(piece)){
 				case 'p':
 					if(abs(fx - ix) == 1 && abs(fy - iy) == 1)
 						return 1;
@@ -101,6 +103,11 @@ int isvalid(char piece, char ix1, char iy1, char mov, char fx1, char fy1){
 					if((abs(ix-fx)%abs(iy-fy)==0 || (abs(ix-fx)%abs(iy-fy)== NULL)) )
 						return 1;
 					return 0;
-
+			}
+	}
+	return 1;
+	}
+	else 
+	return 0;
 
 }
